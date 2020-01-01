@@ -76,13 +76,13 @@ B73Ab10_sorted-q30.bam
 B73Ab10_sorted_noMismatch.bam
 B73Ab10_part1.txt
 B73Ab10_part2.txt
-B73Ab10_GG-mapped.csv
+B73Ab10_IBM-mapped.csv
 ```
 
-The file `B73Ab10_GG-mapped.csv` is needed for the ALLMAPS step later, but we will renamed this file:
+The file `B73Ab10_IBM-mapped.csv` is needed for the ALLMAPS step later, but we will renamed this file:
 
 ```bash
-mv B73Ab10_GG-mapped.csv goldengate.csv
+mv B73Ab10_IBM-mapped.csv ibm-markers.csv
 ```
 
 ## Process PanGenome anchor markers and generate mapped marker file
@@ -132,10 +132,10 @@ gg3_MapMarkers.sh \
     B73Ab10
 ```
 
-same set of files are created as before. But you will only need `B73Ab10_GG-mapped.csv`. Rename this file
+same set of files are created as before. But you will only need `B73Ab10_IBM-mapped.csv`. Rename this file
 
 ```bash
-B73Ab10_GG-mapped.csv B73Ab10_pangenome.csv
+B73Ab10_IBM-mapped.csv B73Ab10_pangenome.csv
 ```
 
 ### Step 4: Clean markers/ Remove hets
@@ -161,6 +161,6 @@ Run ALLMAPS
 singularity exec --bind $PWD /work/LAS/mhufford-lab/arnstrm/Canu_1.8/genetic_maps/jcvi.simg \
      /work/LAS/mhufford-lab/arnstrm/Canu_1.8/genetic_maps/98_runALLMAPS.sh \
      pangenome.csv \
-     goldengate.csv \
+     ibm-markers.csv \
      B73Ab10.scaffolds.fasta
 ```
