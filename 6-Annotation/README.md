@@ -46,7 +46,7 @@ Reads were mapped using STAR mapping program as follows:
 
 ```bash
 # index
-../runSTARmap_index.sh B73Ab10.pseudomolecules-v2.fasta
+runSTARmap_index.sh B73Ab10.pseudomolecules-v2.fasta
 # first round mapping
 for read1 in *R1.fq.gz; do
   runSTARmap_round1.sh B73Ab10.pseudomolecules-v2.fasta ${read1}
@@ -70,8 +70,8 @@ Five different transcript assemblers were ran on the merged BAM file (`merged_B7
 runStrawberry.sh merged_B73_AB10.bam
 runStringtie.sh merged_B73_AB10.bam
 runTrinity.sh merged_B73_AB10.bam
-/runClass2.sh merged_B73_AB10.bam
-/runCufflinks.sh merged_B73_AB10.bam
+runClass2.sh merged_B73_AB10.bam
+runCufflinks.sh merged_B73_AB10.bam
 ```
 
 Since Trinity generates a fasta file, we will use GMAP to map them and create a GFF3 file.
