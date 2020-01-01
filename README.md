@@ -7,7 +7,7 @@ You can find the scripts for each section in separate folders.
 
 1. [PacBio Assembly](1-PacBio/README.md)
 2. [Nanopore Assembly](2-Nanopore/README.md)
-3. [Optical-map Assembly](3-BioNano/README.md)
+3. [Optical-map Assembly](3-Bionano/README.md)
 4. [Assembly merging and gap closing](4-Assembly/README.md)
 5. [AGP construction](5-AGP/README.md)
 6. [Gene Prediction](6-Annotation/README.md)
