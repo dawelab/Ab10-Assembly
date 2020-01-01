@@ -54,7 +54,7 @@ B73Ab10_merged.txt
 
 as output
 
-### Step 3a: Map markers
+### Step 3a: Map IBM markers
 
 Map markers
 
@@ -164,3 +164,6 @@ singularity exec --bind $PWD /work/LAS/mhufford-lab/arnstrm/Canu_1.8/genetic_map
      ibm-markers.csv \
      B73Ab10.scaffolds.fasta
 ```
+
+This process was repeated for (A) ONT only assembly, (B) PacBio only assembly, and (C) Hybrid assembly scaffolds separately.
+ 
