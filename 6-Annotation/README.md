@@ -105,4 +105,6 @@ As a last step, we will run Mikado to finalize the predictions. It is done using
 finalize-files-and-pick.sh B73_Ab10
 ```
 
-### Post processing of evidence-based predictions
+### 5. Post processing of evidence-based predictions
+
+Kapeel's section
