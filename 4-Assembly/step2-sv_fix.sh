@@ -15,7 +15,7 @@ perl $EBROOTBIONANOSOLVE/HybridScaffold/06042019/scripts/fa2cmap_multi_color.pl 
 
 #SV calling, use adjusted cmap as reference, to identify indels in contigs after conflict resolving
 
-cd $output_dir
+cd ${output_dir}
 python $EBROOTBIONANOSOLVE/Pipeline/06042019/runCharacterize.py \
 -t $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/RefAligner \
 -r $bionano_genome \
@@ -28,8 +28,8 @@ python $EBROOTBIONANOSOLVE/Pipeline/06042019/runSV.py \
 -t $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/RefAligner \
 -r $bionano_genome \
 -q ${genome_dirc}/${genome_cmap} \
--o $output_dir/SV_identified \
--E $output_dir/alignref/$errbin \
+-o ${output_dir}/SV_identified \
+-E ${output_dir}/alignref/$errbin \
 -a $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/optArguments_nonhaplotype_noES_DLE1_saphyr.xml \
 -j 12 \
 -T 12 

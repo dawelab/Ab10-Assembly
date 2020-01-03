@@ -56,6 +56,7 @@ ${output_dir}/${bionano_name}_bppAdjust.cmap \
 ${output_dir}/conflicts.txt 30
 
 # Cut conflicts
+mkdir -p ${output_dir}/conflict_CMAP
 
 perl $EBROOTBIONANOSOLVE/HybridScaffold/06042019/scripts/cut_conflicts.pl \
 -align1XmapFile ${output_dir}/align1.xmap \
@@ -75,10 +76,11 @@ perl $EBROOTBIONANOSOLVE/HybridScaffold/06042019/scripts/cut_conflicts.pl \
 module load Anaconda3/5.0.1
 module load Biopython/1.68-foss-2016b-Python-3.5.2
 
-mkdir ${output_dir}/conflict_NGS
-python ~/cut_conflicts.py \
+mkdir -p ${output_dir}/conflict_NGS
+
+python cut_conflicts.py \
 -i $genome \
--k $core/step0_assembly/${genome_name}_CTTAAG_0kb_0labels_key.txt \
+-k ${genome_dirc}/${genome_name}_CTTAAG_0kb_0labels_key.txt \
 -c ${output_dir}/conflict_CMAP/auto_cut_NGS_coord_translation.txt \
 -o ${output_dir}/conflict_NGS/${genome_name}_cut.fasta
 
