@@ -1,5 +1,7 @@
 #!/bin/bash
 
+module load BionanoSolve/3.4-06042019-foss-2016b
+
 ngs_genome=$1
 bionano=$2
 errbin=$3
