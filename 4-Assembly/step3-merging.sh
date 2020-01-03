@@ -1,4 +1,5 @@
 #!/bin/bash
+if [ "$#" -ne 4 ] ; then
 echo "Files required:"
 echo -e "\t\t(1) contigs in fasta format (core/backbone assembly)"
 echo -e "\t\t(2) contigs in fasta format (supplementary assembly)"
@@ -6,6 +7,7 @@ echo -e "\t\t(3) bionano contigs in cmap format (bionano de novo assembly)"
 echo -e "\t\t(4) output directory for merged contigs and bionano alignment"
 echo "step3-merging.sh <core.fasta> <sup.cmap> <bionano.cmap> <output_dir>" ;
 exit 0
+fi
 
 ml minimap2/2.13-foss-2016b 
 module load miniasm/0.3-foss-2016b 
