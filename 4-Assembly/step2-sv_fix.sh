@@ -1,4 +1,12 @@
 #!/bin/bash
+if [ "$#" -ne 3 ] ; then
+echo "Files required:"
+echo -e "\t\t(1) sequence contigs in fasta format (ngs contigs for SV calling)"
+echo -e "\t\t(2) bionano de novo assembly in cmap format"
+echo -e "\t\t(3) output direcotry"
+echo "step2-sv_fix.sh <contigs.fasta> <bionano.cmap> <output_dir>" ;
+exit 0
+fi
 
 module load BionanoSolve/3.4-06042019-foss-2016b
 
