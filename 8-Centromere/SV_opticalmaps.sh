@@ -7,7 +7,7 @@ bionano_genome="$2"
 output_dir="$3"
 
 genome_name=$(basename ${genome%.*})
-genome_dirc=$(dirname ${genome})
+genome_dir=$(dirname ${genome})
 genome_cmap=$(basename ${genome%.*})_CTTAAG_0kb_0labels.cmap
 errbin=$(basename ${genome%.*})_CTTAAG_0kb_0labels.errbin
 #FASTA to CMAP conversion (1 minute and 18 seconds)
@@ -19,7 +19,7 @@ cd $output_dir
 python $EBROOTBIONANOSOLVE/Pipeline/06042019/runCharacterize.py \
 -t $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/RefAligner \
 -r $bionano_genome \
--q ${genome_dirc}/${genome_cmap} \
+-q ${genome_dir}/${genome_cmap} \
 -p $EBROOTBIONANOSOLVE/Pipeline/06042019 \
 -a $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/optArguments_nonhaplotype_noES_DLE1_saphyr.xml \
 -n 12 > ${genome_name}.stats
@@ -27,9 +27,9 @@ python $EBROOTBIONANOSOLVE/Pipeline/06042019/runCharacterize.py \
 python $EBROOTBIONANOSOLVE/Pipeline/06042019/runSV.py \
 -t $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/RefAligner \
 -r $bionano_genome \
--q ${genome_dirc}/${genome_cmap} \
--o $output_dir/SV_identified \
--E $output_dir/alignref/$errbin \
+-q ${genome_dir}/${genome_cmap} \
+-o ${output_dir}/SV_identified \
+-E ${output_dir}/alignref/$errbin \
 -a $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/optArguments_nonhaplotype_noES_DLE1_saphyr.xml \
 -j 12 \
 -T 12 
