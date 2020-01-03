@@ -1,11 +1,4 @@
 #!/bin/bash
-#PBS -q gpu_q
-#PBS -N ${genome_name}.sicer
-#PBS -l nodes=1:ppn=2
-#PBS -l walltime=1:00:00
-#PBS -l mem=30gb
-#PBS -M jl03308@uga.edu
-#PBS -m ae
 
 chip="$1"
 control="$2"
