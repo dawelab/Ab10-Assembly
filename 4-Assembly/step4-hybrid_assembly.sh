@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ngs_genome=$1
 bionano=$2
 errbin=$3
