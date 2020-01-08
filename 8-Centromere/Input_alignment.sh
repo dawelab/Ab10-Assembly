@@ -1,11 +1,4 @@
 #!/bin/bash
-#PBS -q highmem_q
-#PBS -N ${genome_name}.Input_centromere
-#PBS -l nodes=1:ppn=12
-#PBS -l walltime=25:00:00
-#PBS -l mem=120gb
-#PBS -M jl03308@uga.edu
-#PBS -m ae
 
 input_R1 = "$1"
 input_R2 = "$2"
