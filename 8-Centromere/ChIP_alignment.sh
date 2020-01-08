@@ -1,11 +1,4 @@
 #!/bin/bash
-#PBS -q gpu_q
-#PBS -N ${genome_name}.ChIP_centromere
-#PBS -l nodes=1:ppn=12
-#PBS -l walltime=5:00:00
-#PBS -l mem=30gb
-#PBS -M jl03308@uga.edu
-#PBS -m ae
 
 chip_SE="$1"
 genome="$2"
