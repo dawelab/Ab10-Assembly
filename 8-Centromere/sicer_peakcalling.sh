@@ -5,6 +5,8 @@ control="$2"
 genome="$3"
 genome_name=$(basename $genome |cut -f1 -d ".")
 
+module load SAMtools/1.9-foss-2016b
+
 faidx=${genome%.%*}.fai
 if [ -f "${faidx}" ]; then
    echo "skip genome faidx."
