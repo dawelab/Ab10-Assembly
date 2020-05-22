@@ -1,4 +1,4 @@
-We studied how nanopore and pacbio assemblies complemented each other in repetitive and heterozygous area. The complementation test was performed by comparing the relative position of ont and pacbio contig assembly gaps to the final assembly. 
+We studied how nanopore and pacbio assemblies complemented each other in repetitive and heterozygous area. The complementation examination was performed by comparing the relative position of ont and pacbio contig assembly gaps to the final assembly. Length distribution of nanopore and pacbio reads mapped to these gaps were compared. 
 
 Tandemly repeated areas by chromosome self-alignment with minimap2 (v2.17; -PD -k19 -w19 -m200) and heterozygous regions by manual inspection using Bionano Access software.
 
