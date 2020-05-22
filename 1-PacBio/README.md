@@ -1,1 +1,3 @@
 # 1-PacBio
+The longest 50X out of 62X PacBio raw sequences were error-corrected using falcon_kit pipeline v0.7 without repeat masking by TANmask and REPmask (-e 0.75 -l 3000 --min_cov 2 --max_n_read 200). The error-corrected reads (43X, N50 = 22.3 Kb) were then trimmed and assembled with Canu (v1.8) with the following parameters: correctedErrorRate=0.065 corMhapSensitivity=normal ovlMerThreshold=500 utgOvlMerThreshold=150. 
+The accuracy of the Canu-generated contigs was increased by aligning the raw PacBio reads to the assembly using pbmm2 (v1.2.0) from pb-assembly and running the PacBio consensus algorithm tool Arrow (v2.3.3) (https://github.com/PacificBiosciences/GenomicConsensus) with default parameters to generate sequenced polished contigs.
