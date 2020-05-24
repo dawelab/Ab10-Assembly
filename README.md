@@ -13,7 +13,7 @@ You can find the scripts for each section in separate folders.
 6. [Gene Prediction](6-Annotation/README.md)
 7. [TE annotation](7-TE/README.md)
 8. [Centromere and repeat analyses](8-Centromere/README.md)
-
+9. [Assembly complementation analyses](9-Complementation_analysis/README.md)
 ## License
 
 Scripts in this repository are licensed under General Public License v3.
