@@ -120,3 +120,8 @@ kpAddLabels(chr1_region, labels="gene", r0=0.72, r1=0.84,side="left",label.margi
 
 dev.off()
 
+#bam1 <- "B73Ab10.pseudomolecules-v2.ChIP.rmdup.q20.sorted.bam"
+#window.size <- 1e4
+#kpPlotBAMDensity(genome_plot, data = bam1, window.size = window.size, r0=0.32, r1=0.58, col="#656565",border="#656565") 
+#kpAxis(kp, ymax=kp$latest.plot$computed.values$max.density,r0=-0.08, r1=0.15)
+#kpAddLabels(genome_plot, labels="CENH3", r0=0.05, r1=0.10,side="left",label.margin=0.01)
