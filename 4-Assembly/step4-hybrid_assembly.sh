@@ -17,8 +17,6 @@ perl $EBROOTBIONANOSOLVE/HybridScaffold/06042019/hybridScaffold.pl \
 -f \
 -B 2 \
 -N 2 \
--y \
--x \
 -p $EBROOTBIONANOSOLVE/Pipeline/06042019 \
 -q $EBROOTBIONANOSOLVE/RefAligner/8949.9232rel/optArguments_nonhaplotype_noES_noCut_DLE1_saphyr.xml \
 -e ${errbin}
