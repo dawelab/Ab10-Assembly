@@ -10,7 +10,7 @@ fi
 
 module load BionanoSolve/3.4-06042019-foss-2016b
 
-ngs_genome="$1"
+genome="$1"
 bionano_genome="$2"
 output_dir="$3"
 
