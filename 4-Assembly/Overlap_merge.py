@@ -117,7 +117,7 @@ def ref_query(overlaps_key):
             overlaps_key.loc[i,'Ref_Sequence_ID_final'] = overlaps_key_cluster.loc[i,'Ref_Sequence_ID']
             overlaps_key.loc[i,'Ref_Len_final'] = overlaps_key_cluster.loc[i,'Ref_Len']
     
-        overlaps_key_cluster = overlaps_key[overlaps_key['cluster']==4]
+        #overlaps_key_cluster = overlaps_key[overlaps_key['cluster']==4]
         if overlaps_key_cluster.shape[0] > 1:
             ref_query_list = []
     #        index0 = overlaps_key_cluster[overlaps_key_cluster[['Ref_Len']].values == overlaps_key_cluster[['Ref_Len']].values.max()].index.values[0] 
