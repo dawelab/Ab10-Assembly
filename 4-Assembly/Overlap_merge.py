@@ -66,7 +66,7 @@ def identify_overlaps(alignments):
     overlaps.columns=['Ref1_ID', 'R1_Start','R1_End','Query1_ID', 'Q1_Start','Q1_End','R1_Length','Q1_Length','Orientation1','Ref2_ID', 'R2_Start','R2_End','Query2_ID', 'Q2_Start','Q2_End','R2_Length','Q2_Length','Orientation2']
     overlaps['Overlap_Len'] = (overlaps['R2_Start'] - overlaps['R1_End']).abs()
     #overlaps['Predicted_Merge_Len'] = (overlaps['R1_Length'] + overlaps['R2_Length'] - overlaps['Overlap_Len']).abs()
-    return overlaps.sort_values('Ref1_ID').drop_duplicates(subset=['Query1_ID', 'Query2_ID'], keep='first')
+    return overlaps.sort_values('Ref1_ID').drop_duplicates(subset=['Query1_ID', 'Query2_ID'], keep='first').sort_index().reset_index(drop=True)
 
 #map sequence ID with key
 def map_key(overlaps,keys):
@@ -129,7 +129,9 @@ def ref_query(overlaps_key):
             overlaps_key.loc[i,'Query_Len_final'] = overlaps_key_cluster.loc[i,'Query_Len']        
             overlaps_key.loc[i,'Ref_Sequence_ID_final'] = overlaps_key_cluster.loc[i,'Ref_Sequence_ID']
             overlaps_key.loc[i,'Ref_Len_final'] = overlaps_key_cluster.loc[i,'Ref_Len']
+            overlaps_key_cluster = overlaps_key[overlaps_key['cluster']==x]
             for i in overlaps_key_cluster.index[1:]:
+                overlaps_key_cluster = overlaps_key[overlaps_key['cluster']==x]
                 overlaps_key.loc[i,'Output_Sequence_ID'] = overlaps_key.loc[i-1,'Output_Sequence_ID'].split('_map')[0] +'_merge'+ str(i+1) +'_map' + str(overlaps_key.loc[i,'Ref1_ID'])
     #            overlaps_key.loc[i,'Output_Predicted_Len'] = abs(overlaps_key.loc[i,'Ref_Len'] + overlaps_key.loc[i,'Query_Len_final'] - overlaps_key.loc[i,'Overlap_Len'])
                 if overlaps_key_cluster.loc[i,'Ref_Len'] > overlaps_key_cluster.loc[i-1,'Output_Predicted_Len']:
@@ -213,7 +215,7 @@ def output(overlaps_key,out_dir,genomepath):
         f.writelines( "%s\n" % item for item in modified_seq_input)
     with open(os.path.join(out_dir,'output_seq.txt'),'w') as f:
         for item in output_seq:
-            item_path = os.path.join(out_dir,overlap_sequence_ids,item+'.fasta')
+            item_path = os.path.join(out_dir,'*',item+'.renamed.fasta')
             f.writelines(item_path + ' ')
     #print(output_seq)
        
